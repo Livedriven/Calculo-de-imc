@@ -1,0 +1,88 @@
+@import "reset.css";
+@import "variable.css";
+
+body{
+  display: grid;
+  grid-template-areas: 
+    "header"
+     "main" 
+  ;
+  grid-template-rows: auto 1fr;
+  gap: 1rem;
+  height: 100vh;
+}
+.container-header{
+  grid-area: header;
+  text-align: center;
+  background-color: var(--header-botoes);
+  padding: 20px;
+}
+.container-header h1{
+  color: var(--texto-fundo);
+}
+.container-main{
+  grid-area: main;
+  display: flex;
+  flex: 2 1 auto;
+}
+.container-img{
+  padding-top: 100px;
+}
+.container-img img{
+  width: 600px;
+  height: auto;
+}
+.container-forms{
+  margin: auto;
+  background-color: var(--texto-fundo);
+  border-radius: 12px;
+}
+.container-forms form{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 30px;
+}
+form label{
+  padding-bottom: 5px;
+  text-align: center;
+  color: var(--texto-principal);
+}
+form input{
+  padding: 5px;
+  border: none;
+  border-radius: 7px;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+form button{
+  padding: 5px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+button:active{
+  transform: scale(0.90);
+}
+.resultado{
+  padding: 10px;
+  border-radius: 12px;
+  margin-top: 10px;
+  text-align: center;
+  color: var(--texto-fundo);
+  background-color: var(--resultado);
+}
+.info{
+  background-color: var(--info);
+}
+.sucesso{
+  background-color: var(--sucesso);
+}
+.alerta{
+  background-color: var(--alerta);
+}
+.perigo{
+  background-color: var(--critico)
+}
