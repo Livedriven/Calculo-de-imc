@@ -1,72 +1,88 @@
-@import "reset.css";
-@import "variable.css";
+@import url("reset.css");
+@import url("variable.css");
 
-body{
+body {
   display: grid;
-  grid-template-areas: 
+  grid-template-areas:
     "header"
-     "main" 
+    "main"
   ;
   grid-template-rows: auto 1fr;
   gap: 1rem;
   height: 100vh;
 }
-.container-header{
+
+.container-header {
   grid-area: header;
   text-align: center;
   background-color: var(--header-botoes);
   padding: 20px;
 }
-.container-header h1{
+
+.container-header h1 {
   color: var(--texto-fundo);
+  font-size: clamp(2rem, 2vw, 3rem);
 }
-.container-main{
+
+.container-main {
   grid-area: main;
   display: flex;
-  flex: 2 1 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
-.container-img{
+
+.container-img {
   padding-top: 100px;
 }
-.container-img img{
-  width: 600px;
+
+.container-img img {
+  width: 300px;
   height: auto;
 }
-.container-forms{
-  margin: auto;
+
+.container-forms {
   background-color: var(--texto-fundo);
   border-radius: 12px;
 }
-.container-forms form{
+
+.container-forms form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding: 30px;
 }
-form label{
+
+form label {
   padding-bottom: 5px;
   text-align: center;
   color: var(--texto-principal);
 }
-form input{
+
+form input {
   padding: 5px;
   border: none;
   border-radius: 7px;
 }
+
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
-form button{
+
+form button {
   padding: 5px;
   border-radius: 7px;
   cursor: pointer;
   transition: transform 0.1s ease;
 }
-button:active{
+
+button:active {
   transform: scale(0.90);
 }
-.resultado{
+
+.resultado {
   padding: 10px;
   border-radius: 12px;
   margin-top: 10px;
@@ -74,15 +90,36 @@ button:active{
   color: var(--texto-fundo);
   background-color: var(--resultado);
 }
-.info{
+
+.info {
   background-color: var(--info);
 }
-.sucesso{
+
+.sucesso {
   background-color: var(--sucesso);
 }
-.alerta{
+
+.alerta {
   background-color: var(--alerta);
 }
-.perigo{
+
+.perigo {
   background-color: var(--critico)
+}
+
+/* Leve responsividade*/
+
+@media(min-width: 720px) {
+  .container-main {
+    flex-direction: row;
+  }
+
+  .container-img img {
+    width: 600px;
+    height: auto;
+  }
+
+  .container-forms {
+    margin: auto;
+  }
 }
